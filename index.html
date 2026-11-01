@@ -621,7 +621,7 @@ b,strong,h1,h2,h3,h4,h5,h6,th{font-weight:500}
         <div><b>6+ years</b><span>of product experience, from fintech to software house</span></div>
       </div>
       <div class="row">
-        <a class="btn ghost" href="Andy-Morais-Resume.pdf" target="_blank" rel="noopener">Download résumé <span class="arr" aria-hidden="true">↓</span></a>
+        <a class="btn ghost" data-cv href="Andy-Morais-Resume.pdf" target="_blank" rel="noopener">Download résumé <span class="arr" aria-hidden="true">↓</span></a>
         <a class="btn" href="#contato" data-home data-target="contato">Contact <span class="arr" aria-hidden="true">↓</span></a>
       </div>
     </div>
@@ -828,7 +828,7 @@ b,strong,h1,h2,h3,h4,h5,h6,th{font-weight:500}
     </div>
     <p id="copied" class="mono" style="margin-top:14px;min-height:18px;color:var(--amber)" role="status"></p>
     <ul class="links mono">
-      <li><a href="Andy-Morais-Resume.pdf" target="_blank" rel="noopener">Download résumé (PDF) ↓</a></li>
+      <li><a data-cv href="Andy-Morais-Resume.pdf" target="_blank" rel="noopener">Download résumé (PDF) ↓</a></li>
       <li><a href="https://www.linkedin.com/in/andreza-vieira-de-morais" target="_blank" rel="noopener">LinkedIn <span class="arr-l" aria-hidden="true"></span></a></li>
       <li><span>+55 41 99817-7062</span></li>
     </ul>
@@ -1843,6 +1843,7 @@ function norm(h){return h.replace(/\s+/g,' ').trim();}
     document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
     i18nEls.forEach(function (e) { var t = l === 'pt' ? PT[e._k] : null; e.innerHTML = t != null ? t : e._en; });
     attrEls.forEach(function (x) { x[0].setAttribute(x[1], l === 'pt' ? PTA[x[2]] : x[2]); });
+    Array.prototype.forEach.call(document.querySelectorAll('a[data-cv]'), function (a) { a.setAttribute('href', l === 'pt' ? 'Andy-Morais-Curriculo.pdf' : 'Andy-Morais-Resume.pdf'); });
     document.title = l === 'en' ? 'Andy Morais | Staff Product Designer · UX/UI, Design Systems, Fintech' : 'Andy Morais | Staff Product Designer · UX/UI, Design Systems, Fintech';
     var md = document.querySelector('meta[name=description]'); if (md) md.setAttribute('content', l === 'en' ? 'Andy Morais is a Staff Product Designer and Senior UX/UI Designer with 6+ years in B2B SaaS and fintech: AI-first design systems, product discovery, complex financial workflows and product leadership. Remote, available for US and EMEA time zones.' : md.getAttribute('data-pt') || md.getAttribute('content'));
     Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
