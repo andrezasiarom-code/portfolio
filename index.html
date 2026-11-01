@@ -562,6 +562,15 @@ b,strong,h1,h2,h3,h4,h5,h6,th{font-weight:500}
   .case[data-case="trio"] .ch-art { width: 100%; }
 }
 @media (max-width: 560px) { .t-states { grid-template-columns: minmax(0, 1fr); } }
+/* Open case: botão primário no dark mode (fundo branco, texto preto) + capa clicável */
+.btn.open{background:#fff!important;color:#0b0b0b!important}
+.btn.open:hover{background:#e6e6e6!important}
+.btn.open .arr{background:transparent!important;color:#0b0b0b!important}
+.btn.open .arr::before{background:#0b0b0b!important;opacity:.85!important}
+.proj .shot{cursor:pointer}
+.proj .shot img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.proj .shot:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.proj .shot img{transition:none}.proj .shot:hover img{transform:none}}
 </style>
 </head>
 <body>
@@ -576,7 +585,6 @@ b,strong,h1,h2,h3,h4,h5,h6,th{font-weight:500}
         <a href="#sobre" data-home data-target="sobre">About</a>
         <a href="#trabalhos" data-home data-target="trabalhos">Work</a>
         <a href="#servicos" data-home data-target="servicos">Skills</a>
-        <a href="#processo" data-home data-target="processo">Experience</a>
         <a href="#contato" data-home data-target="contato">Contact</a>
       </div>
       <div class="nav-right">
@@ -742,77 +750,6 @@ b,strong,h1,h2,h3,h4,h5,h6,th{font-weight:500}
       <div class="service">
         <div><h3>Methodologies</h3></div>
         <div><p>Lean UX, Design Thinking, Design Sprint, Agile/Scrum and Data-Informed Design.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band dark" id="processo">
-  <div class="wrap">
-    <span class="chip">Experience</span>
-    <h2 class="h2" style="margin-top:20px">Where I've <em>worked</em>.</h2>
-    <div class="steps exp">
-      <div class="step">
-        <div><span class="k mono">Jan 2025 – Present</span><h3 style="margin-top:14px">Trio Payments</h3><p class="role">Digital Bank / Fintech<br>Staff Product Design (Jan 2026 – Present)<br>Senior Product Designer (Jan 2025 – Dec 2025)</p></div>
-        <ul>
-          <li><b>AI-first Design System:</b> evolved the existing system into a code-aligned foundation, cutting UI rework during testing and QA by 80%.</li>
-          <li><b>Strategic product evolution:</b> from a high-volume payments and collections platform toward an AI-native digital banking experience.</li>
-          <li><b>Complex financial workflows:</b> batch payments via CSV/CNAB, approvals, permissions and authorization hierarchies.</li>
-          <li><b>Team and process:</b> helped establish the Product Design function, from discovery to UX QA.</li>
-          <li><b>Cross-functional leadership:</b> technical reference and bridge between Design, Product and Engineering.</li>
-          <li><b>Financial experience:</b> improvements to the dashboard and to web and mobile banking journeys.</li>
-        </ul>
-      </div>
-      <div class="step">
-        <div><span class="k mono">Jan 2021 – Jan 2025</span><h3 style="margin-top:14px">Ateliware</h3><p class="role">Software development company<br>Senior UX/UI Product Designer (Jan 2023 – Jan 2025)<br>Product Designer (Jan 2021 – Mar 2023)</p></div>
-        <ul>
-          <li><b>Led product discovery and UX strategy</b> for 15+ B2B and SaaS products.</li>
-          <li><b>Structured the company's product discovery service</b> with repeatable stages and deliverables, contributing to a new revenue stream.</li>
-          <li><b>Facilitated co-creation workshops</b> using Design Thinking, Lean Discovery and Design Sprint.</li>
-          <li><b>Conducted market research</b>, benchmarking, feature prioritization and service journey mapping.</li>
-          <li><b>Led initiatives end to end</b>, from kickoff to handoff, coordinating Design and Engineering.</li>
-        </ul>
-      </div>
-      <div class="step">
-        <div><span class="k mono">Sep 2019 – Dec 2020</span><h3 style="margin-top:14px">Big Brain</h3><p class="role">Microsoft Partner<br>UX Designer</p></div>
-        <ul>
-          <li><b>Contributed to the creation</b> of a new product area.</li>
-          <li><b>Supported user research</b> and data analysis to uncover pain points and user needs.</li>
-          <li><b>Facilitated workflow mapping</b> and redesign workshops.</li>
-          <li><b>Created wireframes, high-fidelity interfaces and prototypes</b> in Figma and Miro.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band deep" id="metodos">
-  <div class="wrap">
-    <span class="chip">Education</span>
-    <h2 class="h2" style="margin-top:20px">Education and <em>certifications</em>.</h2>
-    <div class="credits">
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li><b>Postgraduate: User-Centered Design</b><span>Interaction Design · Universidade Positivo, 2021</span></li>
-          <li><b>Undergraduate: Advertising and Social Communication</b><span>FAE Centro Universitário, 2017</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Certifications</h3>
-        <ul>
-          <li><b>Design and Generative Artificial Intelligence</b><span>Lisbon Digital School, 2024</span></li>
-          <li><b>Fundamentals of Agile Project Management</b><span>LinkedIn, 2024</span></li>
-          <li><b>The Disney/Pixar Way of Creating and Innovating</b><span>Lederman Consulting &amp; Education, 2024</span></li>
-          <li><b>Scrum</b><span>SCRUMstudy, 2023</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Languages</h3>
-        <ul>
-          <li><b>English</b><span>Advanced / Professional working proficiency</span></li>
-          <li><b>Portuguese</b><span>Native speaker</span></li>
-        </ul>
       </div>
     </div>
   </div>
@@ -1879,6 +1816,13 @@ function norm(h){return h.replace(/\s+/g,' ').trim();}
   window.addEventListener('hashchange', function () { setTimeout(fitAll, 0); });
   fitAll();
 })();
+  /* capa do projeto clicável: abre o mesmo case do botão "Open case" */
+  document.addEventListener('click', function (e) {
+    var shot = e.target.closest('.proj .shot');
+    if (!shot) return;
+    var link = shot.closest('.proj').querySelector('a.open');
+    if (link) link.click();
+  });
 </script>
 
 </body>
